@@ -1,0 +1,45 @@
+{
+  "name": "2b0x-coder-desktop",
+  "version": "1.0.0",
+  "description": "Unofficial desktop wrapper for 2B0X Coder",
+  "main": "main.js",
+  "author": "Xmm",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --linux deb",
+    "dist:appimage": "electron-builder --linux AppImage"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "dev.appmedo.twobox0coder.desktop",
+    "productName": "2B0X Coder",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "offline.html",
+      "build/icon.png"
+    ],
+    "linux": {
+      "target": [
+        {
+          "target": "deb",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": "build/icon.png",
+      "category": "Development",
+      "maintainer": "Xmm",
+      "synopsis": "Desktop wrapper for 2B0X Coder, a browser-based AI coding assistant."
+    },
+    "deb": {
+      "depends": ["gconf2", "gconf-service", "libnotify4", "libappindicator1", "libxtst6", "libnss3"]
+    }
+  }
+}
