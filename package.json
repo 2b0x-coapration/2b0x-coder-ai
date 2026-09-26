@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "electron .",
-    "dist": "electron-builder --linux deb",
+    "dist": "electron-builder --linux deb --publish=never",
     "dist:appimage": "electron-builder --linux AppImage"
   },
   "devDependencies": {
